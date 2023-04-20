@@ -1,33 +1,42 @@
 const mongoose = require('mongoose')
 
 
-const motion = new mongoose.Schema({
-  tilt:{
+const sensors = new mongoose.Schema({
+  AbsoluteOrientalSensor:{
     required: true,
     type: Number
   },
-  shake:{
+  Accelerometer:{
     required: true,
     type:Number
   },
-  rotation:{
+  AmbientLightSensor:{
+    required: true,
+    type: Number
+  },
+  GravitySensor:{
+    required: true,
+    type: Number
+  },
+  Gyroscope:{
+    required: true,
+    type: Number
+  },
+  Magnetometersensor:{
+    required: true,
+    type: Number
+  },
+  OrientalSensor:{
+    required: true,
+    type: Number
+  },
+  RelativeOrientalSensor:{
     required: true,
     type: Number
   }
 })
 
-const envi = new mongoose.Schema({
-    temp:{
-        required:true,
-        type:Number
-    }
-    ,
-    humidity:{
-        required:true,
-        type: Number
-    }
 
-})
+const model = mongoose.model('Sensors',sensors)
 
-
-module.exports= {motion , envi}
+module.exports= {model}

@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 
-app.get('/',require('./routers/route'))
+app.get('/api',require('./routers/route'))
 
 
 app.listen(4000,()=>{
